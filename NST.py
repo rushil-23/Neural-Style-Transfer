@@ -180,20 +180,29 @@ def neural_style_transfer(config):
     optimizer.step(closure)
     return dump_path
 
-PATH = ''
-CONTENT_IMAGE = 'c1.jpg'
-STYLE_IMAGE = 's1.jpg'
+PATH = r"C:\Users\rushi_a87oqn1\Desktop\Neural-Style-Transfer\data"
 
-default_resource_dir = os.path.join(PATH, 'data')
-content_images_dir = os.path.join(default_resource_dir, 'content-images')
-style_images_dir = os.path.join(default_resource_dir, 'style-images')
-output_img_dir = os.path.join(default_resource_dir, 'output-images')
+CONTENT_IMAGE = "c5.jpg"  
+STYLE_IMAGE = "s2.jpg"    
+
+content_images_dir = os.path.join(PATH, 'content-images')
+style_images_dir = os.path.join(PATH, 'style-images')
+output_img_dir = os.path.join(PATH, 'output-images')
+
 img_format = (4, '.jpg')
 
-optimization_config = {'content_img_name': CONTENT_IMAGE, 'style_img_name': STYLE_IMAGE, 'height': 400, 'content_weight': 100000.0, 'style_weight': 30000.0, 'tv_weight': 1.0}
-optimization_config['content_images_dir'] = content_images_dir
-optimization_config['style_images_dir'] = style_images_dir
-optimization_config['output_img_dir'] = output_img_dir
-optimization_config['img_format'] = img_format
+optimization_config = {
+    'content_img_name': CONTENT_IMAGE,
+    'style_img_name': STYLE_IMAGE,
+    'height': 400,
+    'content_weight': 1000.0,
+    'style_weight': 10000.0,
+    'tv_weight': 1.0,
+    'content_images_dir': content_images_dir,
+    'style_images_dir': style_images_dir,
+    'output_img_dir': output_img_dir,
+    'img_format': img_format
+}
 
 results_path = neural_style_transfer(optimization_config)
+
