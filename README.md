@@ -69,7 +69,7 @@ Neural style transfer is a technique that is used to take two images—a content
 
 1. Clone the repository and move to the downloaded folder:
 ```
-    $  git clone https://github.com/nazianafis/Neural-Style-Transfer
+    $  git clone https://github.com/rushil-23/Neural-Style-Transfer
 ```
 ```
     $  cd Neural-Style-Transfer
